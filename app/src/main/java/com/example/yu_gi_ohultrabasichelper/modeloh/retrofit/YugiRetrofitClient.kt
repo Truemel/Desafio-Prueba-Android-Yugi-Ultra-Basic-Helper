@@ -7,6 +7,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 class YugiRetrofitClient {
 
     companion object{
+
         private var retro: Retrofit? = null
 
         fun getRetro():Retrofit{
