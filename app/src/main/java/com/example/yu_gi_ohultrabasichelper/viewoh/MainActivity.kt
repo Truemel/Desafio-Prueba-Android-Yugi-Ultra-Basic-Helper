@@ -9,10 +9,10 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
+        changeFragment(YugiSetsFragment(), null)
     }
 
     fun changeFragment(fragment: Fragment, tag:String?){
-        supportFragmentManager.beginTransaction().addToBackStack(null).replace(R.id.texto, fragment, tag).commit()
+        supportFragmentManager.beginTransaction().addToBackStack(null).replace(R.id.frame, fragment, tag).commit()
     }
 }
