@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Yu-gi-oh! Ultra Basic Helper</string>
+    <string name="set_list_text">Set List</string>
+    <string name="card_list_text">Card List</string>
 </resources>
