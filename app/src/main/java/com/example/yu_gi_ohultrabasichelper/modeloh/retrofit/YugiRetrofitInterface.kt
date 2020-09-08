@@ -7,10 +7,10 @@ import retrofit2.http.Path
 interface YugiRetrofitInterface {
 
     @GET("card_sets")
-    fun getYugiSetList():Call<MutableList<String>>
+    fun getYugiSetList():Call<YugiSetsRetroPojo>
 
     @GET("set_data/{set_name}")
-    fun getYugiCardsFromSet(@Path("set_name") setName:String):Call<MutableList<YugiCardListRetroPojo>>
+    fun getYugiCardsFromSet(@Path("set_name") setName:String):Call<YugiCardListRetroPojo>
 
     @GET("card_data/{card_name}")
     fun getYugiCardData(@Path("set_name") cardName:String):Call<YugiCardDataRetroPojo>
