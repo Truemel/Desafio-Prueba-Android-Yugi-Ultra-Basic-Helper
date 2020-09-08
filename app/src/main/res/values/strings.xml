@@ -3,4 +3,5 @@
     <string name="set_list_text">Set List</string>
     <string name="card_list_text">Card List</string>
     <string name="image_text">Image</string>
+    <string name="save_fav">Save as Favourite</string>
 </resources>
