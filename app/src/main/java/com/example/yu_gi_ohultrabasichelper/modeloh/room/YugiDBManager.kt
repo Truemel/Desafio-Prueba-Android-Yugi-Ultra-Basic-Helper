@@ -25,6 +25,10 @@ class YugiDBManager(private val yugiDAO: YugiDAO) {
         yugiDAO.insertFavCard(YugiFavouriteTablePojo(card.name, card.text, card.card_type, card.type, card.family, card.atk, card.def, card.level, card.property))
     }
 
+    suspend fun insertCardData(card: CardDataRetro){
+        yugiDAO.insertCardData(YugiCardDataTablePojo(card.name, card.text, card.card_type, card.type, card.family, card.atk, card.def, card.level, card.property))
+    }
+
     suspend fun updateFavCard(card:YugiFavouriteTablePojo){
         yugiDAO.updateFavCard(card)
     }
@@ -47,6 +51,10 @@ class YugiDBManager(private val yugiDAO: YugiDAO) {
 
     fun getFavCardsList(): LiveData<MutableList<YugiFavouriteTablePojo>>{
         return yugiDAO.getFavCardsList()
+    }
+
+    fun getCardData(card:String):LiveData<YugiCardDataTablePojo>{
+        return yugiDAO.getCardData(card)
     }
 
 }

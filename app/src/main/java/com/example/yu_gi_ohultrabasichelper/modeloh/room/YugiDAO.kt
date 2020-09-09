@@ -16,6 +16,9 @@ interface YugiDAO {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertFavCard(card:YugiFavouriteTablePojo)
 
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    suspend fun insertCardData(card:YugiCardDataTablePojo)
+
     @Update
     suspend fun updateFavCard(card:YugiFavouriteTablePojo)
 
@@ -33,5 +36,8 @@ interface YugiDAO {
 
     @Query("SELECT * FROM fav_table ORDER BY name")
     fun getFavCardsList():LiveData<MutableList<YugiFavouriteTablePojo>>
+
+    @Query("SELECT * FROM card_data_table WHERE 'card' = :card")
+    fun getCardData(card:String):LiveData<YugiCardDataTablePojo>
 
 }

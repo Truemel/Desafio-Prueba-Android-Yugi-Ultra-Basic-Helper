@@ -18,6 +18,7 @@ class YugiViewModel(application: Application) : AndroidViewModel(application) {
     val yugiSetsList:LiveData<MutableList<YugiSetTablePojo>>
     lateinit var yugiCardsList:LiveData<MutableList<YugiCardTablePojo>>
     val yugiFavList:LiveData<MutableList<YugiFavouriteTablePojo>>
+    lateinit var yugiCardData:LiveData<YugiCardDataTablePojo>
 
     init {
         dbManager = YugiDBManager(YugiDB.getDB(application).getYugiDAO())
@@ -39,11 +40,24 @@ class YugiViewModel(application: Application) : AndroidViewModel(application) {
         return haveCards
     }
 
+    fun setCardDataToViewModel(card:String):Boolean{
+        var haveCard:Boolean = false
+
+        yugiCardData = dbManager.getCardData(card)
+
+        if(yugiCardData.value != null && yugiCardData.value!!.name.length > 0)
+            haveCard = true
+
+        return haveCard
+    }
+
     fun insertAllSets(setList:YugiSetsRetroPojo) = viewModelScope.launch { dbManager.insertAllSets(setList) }
 
     fun insertAllCardsFromSet(list:MutableList<CardsRetro>, set: String) = viewModelScope.launch { dbManager.insertAllCardsFromSet(list, set) }
 
     fun insertFavCard(card:CardDataRetro) = viewModelScope.launch { dbManager.insertFavCard(card) }
+
+    fun insertCardData(card: CardDataRetro) = viewModelScope.launch { dbManager.insertCardData(card) }
 
     fun updateFavCard(card:YugiFavouriteTablePojo) = viewModelScope.launch { dbManager.updateFavCard(card) }
 
@@ -90,7 +104,7 @@ class YugiViewModel(application: Application) : AndroidViewModel(application) {
                 response: Response<YugiCardDataRetroPojo>
             ) {
                 if(response.isSuccessful && response.body()!!.data != null)
-                    insertFavCard(response.body()!!.data)
+                    insertCardData(response.body()!!.data)
             }
 
             override fun onFailure(call: Call<YugiCardDataRetroPojo>, t: Throwable) {
