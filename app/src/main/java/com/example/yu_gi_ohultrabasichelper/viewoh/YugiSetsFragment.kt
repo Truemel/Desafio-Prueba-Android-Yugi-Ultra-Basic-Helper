@@ -15,9 +15,9 @@ import com.example.yu_gi_ohultrabasichelper.viewmodeloh.YugiViewModel
 
 class YugiSetsFragment:Fragment() {
 
-    lateinit var list:RecyclerView
-    lateinit var vModel:YugiViewModel
-    lateinit var adapter: YugiSetsAdapter
+    private lateinit var list:RecyclerView
+    private lateinit var vModel:YugiViewModel
+    private lateinit var adapter: YugiSetsAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

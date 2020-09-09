@@ -29,6 +29,16 @@ class YugiViewModel(application: Application) : AndroidViewModel(application) {
             getSetListFromRetro()
     }
 
+    fun setCardList(set: String){
+        if(!setCardsListToViewModel(set))
+            getCardListFromSetFromRetro(set)
+    }
+
+    fun setCardData(card: String){
+        if(setCardDataToViewModel(card))
+            getCardDataFromRetro(card)
+    }
+
     fun setCardsListToViewModel(set:String):Boolean{
         var haveCards:Boolean = false
 

@@ -15,16 +15,15 @@ import com.example.yu_gi_ohultrabasichelper.viewmodeloh.YugiViewModel
 
 class YugiCardsListFragment: Fragment() {
 
-    lateinit var list:RecyclerView
-    lateinit var adapter: YugiCardsListAdapter
-    lateinit var vModel:YugiViewModel
+    private lateinit var list:RecyclerView
+    private lateinit var adapter: YugiCardsListAdapter
+    private lateinit var vModel:YugiViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         adapter = YugiCardsListAdapter(mutableListOf(), context as MainActivity)
         vModel = ViewModelProvider(this).get(YugiViewModel::class.java)
-        if(!vModel.setCardsListToViewModel(tag!!))
-            vModel.getCardListFromSetFromRetro(tag!!)
+        vModel.setCardList(tag!!)
         vModel.yugiCardsList.observe(context as MainActivity, Observer { adapter.updateList(it) })
     }
 

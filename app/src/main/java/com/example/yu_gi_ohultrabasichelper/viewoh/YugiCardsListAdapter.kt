@@ -48,6 +48,7 @@ class YugiCardsListAdapter(var list: MutableList<YugiCardTablePojo>, var context
     }
 
     override fun onClick(v: View?) {
-        //(context as MainActivity).changeFragment()
+        val dialog:YugiCardDataFragmentDialog = YugiCardDataFragmentDialog()
+        dialog.showNow((context as MainActivity).supportFragmentManager, v!!.tag.toString())
     }
 }

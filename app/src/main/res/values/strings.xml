@@ -4,4 +4,7 @@
     <string name="card_list_text">Card List</string>
     <string name="image_text">Image</string>
     <string name="save_fav">Save as Favourite</string>
+    <string name="del">Delete</string>
+    <string name="del_all">Delete All Favourites</string>
+    <string name="no_fav">No favourites saved</string>
 </resources>

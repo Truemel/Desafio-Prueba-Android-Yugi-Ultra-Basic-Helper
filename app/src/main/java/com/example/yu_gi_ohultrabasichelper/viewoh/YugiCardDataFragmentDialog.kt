@@ -4,10 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import android.widget.EditText
-import android.widget.ImageView
-import android.widget.TextView
+import android.widget.*
 import androidx.fragment.app.DialogFragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
@@ -21,24 +18,23 @@ import com.squareup.picasso.Picasso
 
 class YugiCardDataFragmentDialog:DialogFragment(), View.OnClickListener {
 
-    lateinit var cardName: TextView
-    lateinit var cardType: TextView
-    lateinit var property: TextView
-    lateinit var type: TextView
-    lateinit var family: TextView
-    lateinit var image:ImageView
-    lateinit var level:EditText
-    lateinit var atk:EditText
-    lateinit var def:EditText
-    lateinit var cardText: EditText
-    lateinit var save:Button
-    lateinit var vModel:YugiViewModel
+    private lateinit var cardName: TextView
+    private lateinit var cardType: TextView
+    private lateinit var property: TextView
+    private lateinit var type: TextView
+    private lateinit var family: TextView
+    private lateinit var image:ImageView
+    private lateinit var level:EditText
+    private lateinit var atk:EditText
+    private lateinit var def:EditText
+    private lateinit var cardText: EditText
+    private lateinit var save:Button
+    private lateinit var vModel:YugiViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         vModel = ViewModelProvider(this).get(YugiViewModel::class.java)
-        if(vModel.setCardDataToViewModel(tag!!))
-            vModel.getCardDataFromRetro(tag!!)
+        vModel.setCardData(tag!!)
     }
 
     override fun onCreateView(
@@ -76,5 +72,7 @@ class YugiCardDataFragmentDialog:DialogFragment(), View.OnClickListener {
 
     override fun onClick(v: View?) {
         vModel.insertFavCard(CardDataRetro(cardName.text.toString(), cardText.text.toString(), cardType.text.toString(), type.text.toString(), family.text.toString(), atk.text.toString().toInt(), def.text.toString().toInt(), level.text.toString().toShort(), property.text.toString()))
+        Toast.makeText(context, "Card saved to favourites", Toast.LENGTH_LONG).show()
+        dismiss()
     }
 }
