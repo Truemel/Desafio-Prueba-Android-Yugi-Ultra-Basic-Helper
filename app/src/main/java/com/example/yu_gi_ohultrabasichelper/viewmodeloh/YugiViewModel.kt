@@ -23,10 +23,20 @@ class YugiViewModel(application: Application) : AndroidViewModel(application) {
         dbManager = YugiDBManager(YugiDB.getDB(application).getYugiDAO())
         yugiSetsList = dbManager.getSetsList()
         yugiFavList = dbManager.getFavCardsList()
+
+        if(yugiSetsList.value == null || yugiSetsList.value!!.size == 0)
+            getSetListFromRetro()
     }
 
-    fun setCardsListToViewModel(set:String){
+    fun setCardsListToViewModel(set:String):Boolean{
+        var haveCards:Boolean = false
+
         yugiCardsList = dbManager.getCardsListFromSets(set)
+
+        if(yugiCardsList.value != null && yugiCardsList.value!!.size > 0)
+            haveCards = true
+
+        return haveCards
     }
 
     fun insertAllSets(setList:YugiSetsRetroPojo) = viewModelScope.launch { dbManager.insertAllSets(setList) }

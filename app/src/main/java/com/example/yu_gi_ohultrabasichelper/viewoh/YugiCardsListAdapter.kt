@@ -11,10 +11,10 @@ import com.example.yu_gi_ohultrabasichelper.R
 import com.example.yu_gi_ohultrabasichelper.extras.IMAGES_CARDS
 import com.example.yu_gi_ohultrabasichelper.extras.JPG
 import com.example.yu_gi_ohultrabasichelper.extras.fixNameToPath
-import com.example.yu_gi_ohultrabasichelper.modeloh.retrofit.CardsRetro
+import com.example.yu_gi_ohultrabasichelper.modeloh.room.YugiCardTablePojo
 import com.squareup.picasso.Picasso
 
-class YugiCardsListAdapter(var list: MutableList<CardsRetro>, var context: Context):RecyclerView.Adapter<YugiCardsListAdapter.Holder>(),
+class YugiCardsListAdapter(var list: MutableList<YugiCardTablePojo>, var context: Context):RecyclerView.Adapter<YugiCardsListAdapter.Holder>(),
     View.OnClickListener {
 
     class Holder(itemView: View) : RecyclerView.ViewHolder(itemView){
@@ -33,8 +33,8 @@ class YugiCardsListAdapter(var list: MutableList<CardsRetro>, var context: Conte
     }
 
     override fun onBindViewHolder(holder: Holder, position: Int) {
-        holder.itemView.tag = position
-        Picasso.get().load(IMAGES_CARDS+ fixNameToPath(list[position].name)+JPG).into(holder.image)
+        holder.itemView.tag = list[position].name
+        Picasso.get().load(IMAGES_CARDS+ fixNameToPath(list[position].name+JPG)).into(holder.image)
         holder.text.text = list[position].name
     }
 
@@ -42,7 +42,7 @@ class YugiCardsListAdapter(var list: MutableList<CardsRetro>, var context: Conte
         return list.size
     }
 
-    fun updateList(list: MutableList<CardsRetro>){
+    fun updateList(list: MutableList<YugiCardTablePojo>){
         this.list = list
         notifyDataSetChanged()
     }
