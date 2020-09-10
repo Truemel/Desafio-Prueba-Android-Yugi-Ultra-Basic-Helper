@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <TextView
+        android:id="@+id/welcome"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        android:textAlignment="center"
+        android:textStyle="bold"
+        android:textSize="40sp"
+        android:layout_marginVertical="20dp"
+        android:text="@string/wel"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/card_list"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/welcome"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/fav_list"
+        android:layout_marginTop="20dp"
+        android:layout_marginHorizontal="50dp"
+        android:textSize="20sp"
+        android:textAlignment="center"
+        app:cornerRadius="25dp"
+        android:text="@string/c_list"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/fav_list"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/card_list"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/yugi_helper"
+        android:layout_marginHorizontal="50dp"
+        android:layout_marginTop="10dp"
+        android:textSize="20sp"
+        android:textAlignment="center"
+        app:cornerRadius="25dp"
+        android:text="@string/f_list"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/yugi_helper"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/fav_list"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/note"
+        android:layout_marginTop="10dp"
+        android:layout_marginHorizontal="50dp"
+        android:textSize="20sp"
+        android:textAlignment="center"
+        app:cornerRadius="25dp"
+        android:text="@string/y_helper"/>
+
+    <TextView
+        android:id="@+id/note"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/yugi_helper"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:textSize="16sp"
+        android:textAlignment="center"
+        android:layout_marginVertical="10dp"
+        android:layout_marginHorizontal="10dp"
+        android:text="@string/note_message"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

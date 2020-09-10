@@ -59,7 +59,7 @@ class YugiFavListAdapter(var list:MutableList<YugiFavouriteTablePojo>, var conte
     override fun onClick(v: View?) {
         val aux = v!!.tag.toString()
         if(aux.contains("FRAME")){
-
+            YugiFavDataDialogFragment().showNow((context as MainActivity).supportFragmentManager, aux.substring(aux.indexOf(' ')+1))
         }else if(aux.contains("DEL"))
             onDelListener.onDelete(list[aux.substring(aux.indexOf(' ')+1).toInt()])
     }

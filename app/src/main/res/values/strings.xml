@@ -7,4 +7,9 @@
     <string name="del">Delete</string>
     <string name="del_all">Delete All Favourites</string>
     <string name="no_fav">No favourites saved</string>
+    <string name="wel">Welcome</string>
+    <string name="c_list">Card List</string>
+    <string name="f_list">Favourite List</string>
+    <string name="y_helper">Ultra Basic Helper</string>
+    <string name="note_message">This App is getting the card info from http://yugiohprices.com</string>
 </resources>

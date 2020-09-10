@@ -9,7 +9,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        changeFragment(YugiSetsFragment(), null)
+        changeFragment(StartFragment(), null)
     }
 
     fun changeFragment(fragment: Fragment, tag:String?){
