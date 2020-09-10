@@ -10,9 +10,7 @@ import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.RecyclerView
 import com.example.yu_gi_ohultrabasichelper.R
-import com.example.yu_gi_ohultrabasichelper.extras.IMAGES_CARDS
-import com.example.yu_gi_ohultrabasichelper.extras.JPG
-import com.example.yu_gi_ohultrabasichelper.extras.fixNameToPath
+import com.example.yu_gi_ohultrabasichelper.extras.getCardImagePath
 import com.example.yu_gi_ohultrabasichelper.modeloh.room.YugiFavouriteTablePojo
 import com.squareup.picasso.Picasso
 
@@ -49,7 +47,7 @@ class YugiFavListAdapter(var list:MutableList<YugiFavouriteTablePojo>, var conte
         holder.frame.tag = "FRAME $position"
         holder.del.tag = "DEL $position"
         holder.name.text = list[position].name
-        Picasso.get().load(IMAGES_CARDS+ fixNameToPath(list[position].name)+ JPG).into(holder.image)
+        Picasso.get().load(getCardImagePath(list[position].name)).into(holder.image)
     }
 
     override fun getItemCount(): Int {

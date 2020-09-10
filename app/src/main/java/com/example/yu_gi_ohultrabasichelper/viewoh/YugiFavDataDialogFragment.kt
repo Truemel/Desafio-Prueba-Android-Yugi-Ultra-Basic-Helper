@@ -8,9 +8,7 @@ import android.widget.*
 import androidx.fragment.app.DialogFragment
 import androidx.lifecycle.ViewModelProvider
 import com.example.yu_gi_ohultrabasichelper.R
-import com.example.yu_gi_ohultrabasichelper.extras.IMAGES_CARDS
-import com.example.yu_gi_ohultrabasichelper.extras.JPG
-import com.example.yu_gi_ohultrabasichelper.extras.fixNameToPath
+import com.example.yu_gi_ohultrabasichelper.extras.getCardImagePath
 import com.example.yu_gi_ohultrabasichelper.modeloh.room.YugiFavouriteTablePojo
 import com.example.yu_gi_ohultrabasichelper.viewmodeloh.YugiViewModel
 import com.squareup.picasso.Picasso
@@ -62,7 +60,7 @@ class YugiFavDataDialogFragment:DialogFragment(), View.OnClickListener {
         property.text = favCard.property
         type.text = favCard.type
         family.text = favCard.family
-        Picasso.get().load(IMAGES_CARDS + fixNameToPath(favCard.name) + JPG).into(image)
+        Picasso.get().load(getCardImagePath(favCard.name)).into(image)
         level.setText(favCard.level.toString())
         atk.setText(favCard.atk.toString())
         def.setText(favCard.def.toString())

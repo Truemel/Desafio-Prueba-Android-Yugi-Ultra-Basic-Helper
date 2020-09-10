@@ -9,3 +9,11 @@ const val JPG:String = ".jpg"
 fun fixNameToPath(name:String):String{
     return "[: -]".toRegex().replace(name.trim(), "_")
 }
+
+fun getSetImagePath(name:String):String{
+    return IMAGES_SETS+fixNameToPath(name)+JPG
+}
+
+fun getCardImagePath(name:String):String{
+    return IMAGES_CARDS+fixNameToPath(name)+JPG
+}

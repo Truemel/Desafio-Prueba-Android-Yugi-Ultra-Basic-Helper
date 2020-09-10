@@ -35,7 +35,7 @@ class YugiFavListFragment:Fragment(), YugiFavListAdapter.OnDeleteListener, View.
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val view:View = inflater.inflate(R.layout.recycler_list_layout, container, false)
+        val view:View = inflater.inflate(R.layout.fav_list_layout, container, false)
         val text:TextView = view.findViewById(R.id.list_title)
         text.text = "Favourite List"
         noFav = view.findViewById(R.id.no_fav_text)

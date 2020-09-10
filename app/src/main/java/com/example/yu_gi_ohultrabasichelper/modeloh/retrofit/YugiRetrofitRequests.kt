@@ -11,8 +11,8 @@ class YugiRetrofitRequests {
         onRetroListener = YugiRetrofitClient.getRetro().create(YugiRetrofitInterface::class.java)
     }
 
-    fun getYugiSetsList(callback: Callback<YugiSetsRetroPojo>){
-        val call:Call<YugiSetsRetroPojo> = onRetroListener!!.getYugiSetList()
+    fun getYugiSetsList(callback: Callback<MutableList<String>>){
+        val call:Call<MutableList<String>> = onRetroListener!!.getYugiSetList()
         call.enqueue(callback)
     }
 

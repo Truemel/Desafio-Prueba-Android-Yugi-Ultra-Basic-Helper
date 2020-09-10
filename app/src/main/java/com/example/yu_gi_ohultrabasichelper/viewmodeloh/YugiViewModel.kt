@@ -35,7 +35,7 @@ class YugiViewModel(application: Application) : AndroidViewModel(application) {
     }
 
     fun setCardData(card: String){
-        if(setCardDataToViewModel(card))
+        if(!setCardDataToViewModel(card))
             getCardDataFromRetro(card)
     }
 
@@ -76,16 +76,16 @@ class YugiViewModel(application: Application) : AndroidViewModel(application) {
     fun deleteAllFavCard() = viewModelScope.launch { dbManager.deleteAllFavCard() }
 
     fun getSetListFromRetro(){
-        YugiRetrofitRequests().getYugiSetsList(object : Callback<YugiSetsRetroPojo>{
+        YugiRetrofitRequests().getYugiSetsList(object : Callback<MutableList<String>>{
             override fun onResponse(
-                call: Call<YugiSetsRetroPojo>,
-                response: Response<YugiSetsRetroPojo>
+                call: Call<MutableList<String>>,
+                response: Response<MutableList<String>>
             ) {
-                if(response.isSuccessful && response.body()!!.list.size > 0)
-                    insertAllSets(response.body()!!)
+                if(response.isSuccessful && response.body()!!.size > 0)
+                    insertAllSets(YugiSetsRetroPojo(response.body()!!))
             }
 
-            override fun onFailure(call: Call<YugiSetsRetroPojo>, t: Throwable) {
+            override fun onFailure(call: Call<MutableList<String>>, t: Throwable) {
                 Toast.makeText(getApplication(), "Error, couldn't sets list", Toast.LENGTH_LONG).show()
             }
         })

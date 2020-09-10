@@ -1,6 +1,7 @@
 package com.example.yu_gi_ohultrabasichelper.viewoh
 
 import android.content.Context
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -8,9 +9,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.yu_gi_ohultrabasichelper.R
-import com.example.yu_gi_ohultrabasichelper.extras.IMAGES_CARDS
-import com.example.yu_gi_ohultrabasichelper.extras.JPG
-import com.example.yu_gi_ohultrabasichelper.extras.fixNameToPath
+import com.example.yu_gi_ohultrabasichelper.extras.getCardImagePath
 import com.example.yu_gi_ohultrabasichelper.modeloh.room.YugiCardTablePojo
 import com.squareup.picasso.Picasso
 
@@ -34,7 +33,7 @@ class YugiCardsListAdapter(var list: MutableList<YugiCardTablePojo>, var context
 
     override fun onBindViewHolder(holder: Holder, position: Int) {
         holder.itemView.tag = list[position].name
-        Picasso.get().load(IMAGES_CARDS+ fixNameToPath(list[position].name+JPG)).into(holder.image)
+        Picasso.get().load(getCardImagePath(list[position].name)).into(holder.image)
         holder.text.text = list[position].name
     }
 
@@ -44,6 +43,8 @@ class YugiCardsListAdapter(var list: MutableList<YugiCardTablePojo>, var context
 
     fun updateList(list: MutableList<YugiCardTablePojo>){
         this.list = list
+        Log.i("FAIL", list.toString())
+        Log.i("FAIL 2", this.list.toString())
         notifyDataSetChanged()
     }
 

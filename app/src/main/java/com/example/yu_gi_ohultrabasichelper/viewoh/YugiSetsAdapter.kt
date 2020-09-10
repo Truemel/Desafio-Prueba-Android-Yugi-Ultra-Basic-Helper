@@ -8,9 +8,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.yu_gi_ohultrabasichelper.R
-import com.example.yu_gi_ohultrabasichelper.extras.IMAGES_SETS
-import com.example.yu_gi_ohultrabasichelper.extras.JPG
-import com.example.yu_gi_ohultrabasichelper.extras.fixNameToPath
+import com.example.yu_gi_ohultrabasichelper.extras.getSetImagePath
 import com.example.yu_gi_ohultrabasichelper.modeloh.room.YugiSetTablePojo
 import com.squareup.picasso.Picasso
 
@@ -34,7 +32,7 @@ class YugiSetsAdapter(var list: MutableList<YugiSetTablePojo>, var context: Cont
 
     override fun onBindViewHolder(holder: Holder, position: Int) {
         holder.itemView.tag = list[position].name
-        Picasso.get().load(IMAGES_SETS+fixNameToPath(list[position].name+JPG)).into(holder.image)
+        Picasso.get().load(getSetImagePath(list[position].name)).into(holder.image)
         holder.text.text = list[position].name
     }
 

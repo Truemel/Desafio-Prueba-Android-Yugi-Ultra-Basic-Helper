@@ -29,7 +29,7 @@ interface YugiDAO {
 
     @Query("SELECT * FROM sets_table ORDER BY name")
     fun getSetsList():LiveData<MutableList<YugiSetTablePojo>>
-
+//TODO PENDIENTE HACER SELECT ALL PARA PROBAR FALLA RETORNO NULL
     @Query("SELECT * FROM card_table WHERE 'set' = :set ORDER BY name")
     fun getCardsListFromSets(set:String):LiveData<MutableList<YugiCardTablePojo>>
 

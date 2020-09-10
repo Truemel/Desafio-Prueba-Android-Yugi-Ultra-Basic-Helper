@@ -9,9 +9,7 @@ import androidx.fragment.app.DialogFragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.example.yu_gi_ohultrabasichelper.R
-import com.example.yu_gi_ohultrabasichelper.extras.IMAGES_CARDS
-import com.example.yu_gi_ohultrabasichelper.extras.JPG
-import com.example.yu_gi_ohultrabasichelper.extras.fixNameToPath
+import com.example.yu_gi_ohultrabasichelper.extras.getCardImagePath
 import com.example.yu_gi_ohultrabasichelper.modeloh.retrofit.CardDataRetro
 import com.example.yu_gi_ohultrabasichelper.viewmodeloh.YugiViewModel
 import com.squareup.picasso.Picasso
@@ -61,7 +59,7 @@ class YugiCardDataFragmentDialog:DialogFragment(), View.OnClickListener {
         property.text = it.property
         type.text = it.type
         family.text = it.family
-        Picasso.get().load(IMAGES_CARDS+ fixNameToPath(it.name)+ JPG).into(image)
+        Picasso.get().load(getCardImagePath(it.name)).into(image)
         level.setText(it.level.toString())
         atk.setText(it.atk.toString())
         def.setText(it.def.toString())
