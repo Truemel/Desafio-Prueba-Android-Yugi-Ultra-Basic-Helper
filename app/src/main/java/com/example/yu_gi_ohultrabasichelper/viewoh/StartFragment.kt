@@ -35,7 +35,7 @@ class StartFragment:Fragment(), View.OnClickListener {
 
         if(v!!.id == cList.id)
             frag = YugiSetsFragment()
-        else if(v!!.id == fList.id)
+        else if(v.id == fList.id)
             frag = YugiFavListFragment()
         else
             frag = YugiSetsFragment()

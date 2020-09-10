@@ -2,7 +2,6 @@ package com.example.yu_gi_ohultrabasichelper.modeloh.room
 
 import androidx.lifecycle.LiveData
 import androidx.room.*
-import retrofit2.http.DELETE
 
 @Dao
 interface YugiDAO {
@@ -22,7 +21,7 @@ interface YugiDAO {
     @Update
     suspend fun updateFavCard(card:YugiFavouriteTablePojo)
 
-    @DELETE
+    @Delete
     suspend fun deleteFavCard(card:YugiFavouriteTablePojo)
 
     @Query("DELETE FROM fav_table")

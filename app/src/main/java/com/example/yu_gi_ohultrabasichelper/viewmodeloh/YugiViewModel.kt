@@ -113,7 +113,7 @@ class YugiViewModel(application: Application) : AndroidViewModel(application) {
                 call: Call<YugiCardDataRetroPojo>,
                 response: Response<YugiCardDataRetroPojo>
             ) {
-                if(response.isSuccessful && response.body()!!.data != null)
+                if(response.isSuccessful)
                     insertCardData(response.body()!!.data)
             }
 
