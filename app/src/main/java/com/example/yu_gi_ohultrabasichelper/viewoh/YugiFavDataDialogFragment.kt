@@ -1,6 +1,7 @@
 package com.example.yu_gi_ohultrabasichelper.viewoh
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -32,6 +33,11 @@ class YugiFavDataDialogFragment:DialogFragment(), View.OnClickListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         vModel = ViewModelProvider(this).get(YugiViewModel::class.java)
+        Log.i("ZATAG",tag.toString())
+        if(vModel.yugiFavList.value == null)
+            Log.i("ZATAG", "val NULL")
+        if(vModel.yugiFavList.value != null)
+            Log.i("ZATAGF", "${vModel.yugiFavList.value!!.size}")
         favCard = vModel.yugiFavList.value!![tag.toString().toInt()]
     }
 
