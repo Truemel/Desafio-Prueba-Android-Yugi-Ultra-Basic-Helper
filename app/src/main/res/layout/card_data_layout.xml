@@ -23,7 +23,6 @@
         app:layout_constraintTop_toBottomOf="@id/card_name"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/card_type"
         android:contentDescription="@string/image_text"
         android:layout_marginTop="10dp"/>
 
@@ -34,7 +33,6 @@
         app:layout_constraintTop_toBottomOf="@id/card_image"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toStartOf="@id/card_property"
-        app:layout_constraintBottom_toTopOf="@id/type"
         android:layout_marginTop="10dp"
         android:textSize="12sp"
         android:textAlignment="center"/>
@@ -46,7 +44,6 @@
         app:layout_constraintTop_toBottomOf="@id/card_image"
         app:layout_constraintStart_toEndOf="@id/card_type"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/type"
         android:layout_marginTop="10dp"
         android:textSize="12sp"
         android:textAlignment="center" />
@@ -58,7 +55,6 @@
         app:layout_constraintTop_toBottomOf="@id/card_type"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toStartOf="@id/family"
-        app:layout_constraintBottom_toTopOf="@id/card_level"
         android:layout_marginTop="10dp"
         android:textSize="12sp"
         android:textAlignment="center"/>
@@ -70,7 +66,6 @@
         app:layout_constraintTop_toBottomOf="@id/card_type"
         app:layout_constraintStart_toEndOf="@id/type"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/card_level"
         android:layout_marginTop="10dp"
         android:textSize="12sp"
         android:textAlignment="center"/>
@@ -82,7 +77,6 @@
         app:layout_constraintTop_toBottomOf="@id/type"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toStartOf="@id/card_atk"
-        app:layout_constraintBottom_toTopOf="@id/card_text"
         android:textAlignment="textStart"
         android:textSize="12sp"
         android:inputType="numberDecimal"
@@ -96,7 +90,6 @@
         app:layout_constraintTop_toBottomOf="@id/type"
         app:layout_constraintStart_toEndOf="@id/card_level"
         app:layout_constraintEnd_toStartOf="@id/card_def"
-        app:layout_constraintBottom_toTopOf="@id/card_text"
         android:layout_marginTop="10dp"
         android:textSize="12sp"
         android:textAlignment="textStart"
@@ -110,7 +103,6 @@
         app:layout_constraintTop_toBottomOf="@id/type"
         app:layout_constraintStart_toEndOf="@id/card_atk"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/card_text"
         android:textAlignment="textStart"
         android:inputType="numberDecimal"
         android:textSize="12sp"

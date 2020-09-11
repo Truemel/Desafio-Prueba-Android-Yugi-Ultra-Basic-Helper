@@ -29,9 +29,13 @@ class YugiFavDataDialogFragment:DialogFragment(), View.OnClickListener {
     private lateinit var save: Button
     private lateinit var vModel: YugiViewModel
     private var favCard:YugiFavouriteTablePojo? = null
+    private lateinit var tagP:String
+    private var isDismissed:Boolean = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        tagP = tag!!
+        isDismissed = false
         vModel = ViewModelProvider(this).get(YugiViewModel::class.java)
     }
 
@@ -56,17 +60,19 @@ class YugiFavDataDialogFragment:DialogFragment(), View.OnClickListener {
         save.setOnClickListener(this)
 
         vModel.yugiFavList.observe(context as MainActivity, Observer {
-            favCard = it[tag!!.toInt()]
-            cardName.text = favCard!!.name
-            cardType.text = favCard!!.card_type
-            property.text = favCard!!.property
-            type.text = favCard!!.type
-            family.text = favCard!!.family
-            Picasso.get().load(getCardImagePath(favCard!!.name)).into(image)
-            level.setText(favCard!!.level.toString())
-            atk.setText(favCard!!.atk.toString())
-            def.setText(favCard!!.def.toString())
-            cardText.setText(favCard!!.text)
+            if(!isDismissed){
+                favCard = it[tagP.toInt()]
+                cardName.text = favCard!!.name
+                cardType.text = favCard!!.card_type
+                property.text = favCard!!.property
+                type.text = favCard!!.type
+                family.text = favCard!!.family
+                Picasso.get().load(getCardImagePath(favCard!!.name)).into(image)
+                level.setText(favCard!!.level.toString())
+                atk.setText(favCard!!.atk.toString())
+                def.setText(favCard!!.def.toString())
+                cardText.setText(favCard!!.text)
+            }
         })
 
         return view
@@ -76,6 +82,7 @@ class YugiFavDataDialogFragment:DialogFragment(), View.OnClickListener {
         favCard = YugiFavouriteTablePojo(cardName.text.toString(), cardText.text.toString(), cardType.text.toString(), type.text.toString(), family.text.toString(), atk.text.toString().toInt(), def.text.toString().toInt(), level.text.toString().toShort(), property.text.toString())
         vModel.updateFavCard(favCard!!)
         Toast.makeText(context, "Favourite card updated", Toast.LENGTH_LONG).show()
+        isDismissed = true
         dismiss()
     }
 }
