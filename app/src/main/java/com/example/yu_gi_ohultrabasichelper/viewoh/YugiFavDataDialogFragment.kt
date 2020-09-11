@@ -1,12 +1,12 @@
 package com.example.yu_gi_ohultrabasichelper.viewoh
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.*
 import androidx.fragment.app.DialogFragment
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.example.yu_gi_ohultrabasichelper.R
 import com.example.yu_gi_ohultrabasichelper.extras.getCardImagePath
@@ -28,17 +28,11 @@ class YugiFavDataDialogFragment:DialogFragment(), View.OnClickListener {
     private lateinit var cardText: EditText
     private lateinit var save: Button
     private lateinit var vModel: YugiViewModel
-    private lateinit var favCard:YugiFavouriteTablePojo
+    private var favCard:YugiFavouriteTablePojo? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         vModel = ViewModelProvider(this).get(YugiViewModel::class.java)
-        Log.i("ZATAG",tag.toString())
-        if(vModel.yugiFavList.value == null)
-            Log.i("ZATAG", "val NULL")
-        if(vModel.yugiFavList.value != null)
-            Log.i("ZATAGF", "${vModel.yugiFavList.value!!.size}")
-        favCard = vModel.yugiFavList.value!![tag.toString().toInt()]
     }
 
     override fun onCreateView(
@@ -61,23 +55,26 @@ class YugiFavDataDialogFragment:DialogFragment(), View.OnClickListener {
         save.text = "Save Card Changes"
         save.setOnClickListener(this)
 
-        cardName.text = favCard.name
-        cardType.text = favCard.card_type
-        property.text = favCard.property
-        type.text = favCard.type
-        family.text = favCard.family
-        Picasso.get().load(getCardImagePath(favCard.name)).into(image)
-        level.setText(favCard.level.toString())
-        atk.setText(favCard.atk.toString())
-        def.setText(favCard.def.toString())
-        cardText.setText(favCard.text)
+        vModel.yugiFavList.observe(context as MainActivity, Observer {
+            favCard = it[tag!!.toInt()]
+            cardName.text = favCard!!.name
+            cardType.text = favCard!!.card_type
+            property.text = favCard!!.property
+            type.text = favCard!!.type
+            family.text = favCard!!.family
+            Picasso.get().load(getCardImagePath(favCard!!.name)).into(image)
+            level.setText(favCard!!.level.toString())
+            atk.setText(favCard!!.atk.toString())
+            def.setText(favCard!!.def.toString())
+            cardText.setText(favCard!!.text)
+        })
 
         return view
     }
 
     override fun onClick(v: View?) {
         favCard = YugiFavouriteTablePojo(cardName.text.toString(), cardText.text.toString(), cardType.text.toString(), type.text.toString(), family.text.toString(), atk.text.toString().toInt(), def.text.toString().toInt(), level.text.toString().toShort(), property.text.toString())
-        vModel.updateFavCard(favCard)
+        vModel.updateFavCard(favCard!!)
         Toast.makeText(context, "Favourite card updated", Toast.LENGTH_LONG).show()
         dismiss()
     }
