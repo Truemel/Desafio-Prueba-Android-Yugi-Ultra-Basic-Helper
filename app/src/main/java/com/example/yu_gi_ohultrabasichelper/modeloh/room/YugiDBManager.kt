@@ -45,6 +45,13 @@ class YugiDBManager(private val yugiDAO: YugiDAO) {
     fun getSetsList(): LiveData<MutableList<YugiSetTablePojo>>{
         return yugiDAO.getSetsList()
     }
+//TODO BORRA
+    fun getCardsListFromSets2(): LiveData<MutableList<YugiCardTablePojo>>{
+        val aux = yugiDAO.getCardsListFromSets2()
+        Log.i("FAILG2", aux.value.toString())
+        return aux
+        //return yugiDAO.getCardsListFromSets(set)
+    }
 
     fun getCardsListFromSets(set:String): LiveData<MutableList<YugiCardTablePojo>>{
         val aux = yugiDAO.getCardsListFromSets(set)

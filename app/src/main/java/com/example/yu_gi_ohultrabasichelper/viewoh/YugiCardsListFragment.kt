@@ -25,8 +25,9 @@ class YugiCardsListFragment: Fragment() {
         adapter = YugiCardsListAdapter(mutableListOf(), context as MainActivity)
         vModel = ViewModelProvider(this).get(YugiViewModel::class.java)
         vModel.setCardList(tag!!)
-        vModel.yugiCardsList.observe(context as MainActivity, Observer { adapter.updateList(it)
+        vModel.yugiCardsList.observe(viewLifecycleOwner, Observer { adapter.updateList(it)
             Log.i("FAILV", it.toString())})
+        vModel.setCardList2()
     }
 
     override fun onCreateView(

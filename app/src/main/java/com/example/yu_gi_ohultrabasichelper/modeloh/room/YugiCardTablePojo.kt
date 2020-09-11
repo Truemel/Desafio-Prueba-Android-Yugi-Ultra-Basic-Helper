@@ -5,4 +5,4 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 
 @Entity(tableName = "card_table")
-data class YugiCardTablePojo(@PrimaryKey @NonNull val name:String, val set:String)
+data class YugiCardTablePojo(@PrimaryKey @NonNull val name:String, @NonNull val set:String)
