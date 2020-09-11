@@ -1,7 +1,6 @@
 package com.example.yu_gi_ohultrabasichelper.viewoh
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -25,9 +24,7 @@ class YugiCardsListFragment: Fragment() {
         adapter = YugiCardsListAdapter(mutableListOf(), context as MainActivity)
         vModel = ViewModelProvider(this).get(YugiViewModel::class.java)
         vModel.setCardList(tag!!)
-        vModel.yugiCardsList.observe(viewLifecycleOwner, Observer { adapter.updateList(it)
-            Log.i("FAILV", it.toString())})
-        vModel.setCardList2()
+        vModel.yugiCardsList.observe(context as MainActivity, Observer { adapter.updateList(it) })
     }
 
     override fun onCreateView(

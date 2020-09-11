@@ -54,16 +54,20 @@ class YugiCardDataFragmentDialog:DialogFragment(), View.OnClickListener {
         save = view.findViewById(R.id.save_button)
         save.setOnClickListener(this)
 
-        vModel.yugiCardData.observe(context as MainActivity, Observer { cardName.text = it.name
-        cardType.text = it.card_type
-        property.text = it.property
-        type.text = it.type
-        family.text = it.family
-        Picasso.get().load(getCardImagePath(it.name)).into(image)
-        level.setText(it.level.toString())
-        atk.setText(it.atk.toString())
-        def.setText(it.def.toString())
-        cardText.setText(it.text) })
+        vModel.yugiCardData.observe(context as MainActivity, Observer {
+            if(it != null){
+                cardName.text = it.name
+                cardType.text = it.card_type
+                property.text = it.property
+                type.text = it.type
+                family.text = it.family
+                Picasso.get().load(getCardImagePath(it.name)).into(image)
+                level.setText(it.level.toString())
+                atk.setText(it.atk.toString())
+                def.setText(it.def.toString())
+                cardText.setText(it.text)
+            }
+        })
 
         return view
     }

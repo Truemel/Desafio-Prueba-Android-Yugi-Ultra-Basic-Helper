@@ -28,10 +28,6 @@ class YugiViewModel(application: Application) : AndroidViewModel(application) {
         if(yugiSetsList.value == null || yugiSetsList.value!!.size == 0)
             getSetListFromRetro()
     }
-//TODO BORRA
-    fun setCardList2(){
-        yugiCardsList = dbManager.getCardsListFromSets2()
-    }
 
     fun setCardList(set: String){
         if(!setCardsListToViewModel(set))

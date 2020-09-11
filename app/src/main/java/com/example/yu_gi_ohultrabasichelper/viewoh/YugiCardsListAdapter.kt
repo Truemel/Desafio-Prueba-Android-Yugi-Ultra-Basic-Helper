@@ -1,7 +1,6 @@
 package com.example.yu_gi_ohultrabasichelper.viewoh
 
 import android.content.Context
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -43,8 +42,6 @@ class YugiCardsListAdapter(var list: MutableList<YugiCardTablePojo>, var context
 
     fun updateList(list: MutableList<YugiCardTablePojo>){
         this.list = list
-        Log.i("FAIL", list.toString())
-        Log.i("FAIL 2", this.list.toString())
         notifyDataSetChanged()
     }
 

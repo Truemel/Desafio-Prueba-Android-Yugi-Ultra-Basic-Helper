@@ -1,6 +1,5 @@
 package com.example.yu_gi_ohultrabasichelper.modeloh.room
 
-import android.util.Log
 import androidx.lifecycle.LiveData
 import com.example.yu_gi_ohultrabasichelper.modeloh.retrofit.CardDataRetro
 import com.example.yu_gi_ohultrabasichelper.modeloh.retrofit.CardsRetro
@@ -45,19 +44,9 @@ class YugiDBManager(private val yugiDAO: YugiDAO) {
     fun getSetsList(): LiveData<MutableList<YugiSetTablePojo>>{
         return yugiDAO.getSetsList()
     }
-//TODO BORRA
-    fun getCardsListFromSets2(): LiveData<MutableList<YugiCardTablePojo>>{
-        val aux = yugiDAO.getCardsListFromSets2()
-        Log.i("FAILG2", aux.value.toString())
-        return aux
-        //return yugiDAO.getCardsListFromSets(set)
-    }
 
     fun getCardsListFromSets(set:String): LiveData<MutableList<YugiCardTablePojo>>{
-        val aux = yugiDAO.getCardsListFromSets(set)
-        Log.i("FAILG", aux.value.toString())
-        return aux
-        //return yugiDAO.getCardsListFromSets(set)
+        return yugiDAO.getCardsListFromSets(set)
     }
 
     fun getFavCardsList(): LiveData<MutableList<YugiFavouriteTablePojo>>{

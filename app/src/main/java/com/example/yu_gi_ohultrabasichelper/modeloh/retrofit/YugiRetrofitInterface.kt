@@ -13,5 +13,5 @@ interface YugiRetrofitInterface {
     fun getYugiCardsFromSet(@Path("set_name") setName:String):Call<YugiCardListRetroPojo>
 
     @GET("card_data/{card_name}")
-    fun getYugiCardData(@Path("set_name") cardName:String):Call<YugiCardDataRetroPojo>
+    fun getYugiCardData(@Path("card_name") cardName:String):Call<YugiCardDataRetroPojo>
 }
