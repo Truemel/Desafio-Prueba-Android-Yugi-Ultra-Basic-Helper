@@ -12,6 +12,7 @@ class MainActivity : AppCompatActivity() {
         changeFragment(StartFragment(), null)
     }
 
+    //Reemplaza por el fragmento que recibe y le entrega un tag
     fun changeFragment(fragment: Fragment, tag:String?){
         supportFragmentManager.beginTransaction().addToBackStack(null).replace(R.id.frame, fragment, tag).commit()
     }

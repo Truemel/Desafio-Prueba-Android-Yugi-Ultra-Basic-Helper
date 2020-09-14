@@ -29,16 +29,19 @@ class YugiViewModel(application: Application) : AndroidViewModel(application) {
             getSetListFromRetro()
     }
 
+    //Intenta conseguir la lista de cartas de un set especifico de la base de datos, si no lo encuentras la consigue del Api usando retrofit
     fun setCardList(set: String){
         if(!setCardsListToViewModel(set))
             getCardListFromSetFromRetro(set)
     }
 
+    //Intenta conseguir los datos de una cartas especifica de la base de datos, si no los encuentra los consigue del Api usando retrofit
     fun setCardData(card: String){
         if(!setCardDataToViewModel(card))
             getCardDataFromRetro(card)
     }
 
+    //Obtiene lista de cartas de la base de datos, retorna true si lo logra, de lo contrario retorna false
     fun setCardsListToViewModel(set:String):Boolean{
         var haveCards:Boolean = false
 
@@ -50,6 +53,7 @@ class YugiViewModel(application: Application) : AndroidViewModel(application) {
         return haveCards
     }
 
+    //Obtiene los datos de una carta de la base de datos, retorna true si lo logra, de lo contrario retorna false
     fun setCardDataToViewModel(card:String):Boolean{
         var haveCard:Boolean = false
 
@@ -75,6 +79,7 @@ class YugiViewModel(application: Application) : AndroidViewModel(application) {
 
     fun deleteAllFavCard() = viewModelScope.launch { dbManager.deleteAllFavCard() }
 
+    //consigue la lista de sets del api usando retrofit
     fun getSetListFromRetro(){
         YugiRetrofitRequests().getYugiSetsList(object : Callback<MutableList<String>>{
             override fun onResponse(
@@ -91,6 +96,7 @@ class YugiViewModel(application: Application) : AndroidViewModel(application) {
         })
     }
 
+    //consigue la lista de cartas del api usando retrofit
     fun getCardListFromSetFromRetro(set: String){
         YugiRetrofitRequests().getYugiCardsList(object :Callback<YugiCardListRetroPojo>{
             override fun onResponse(
@@ -107,6 +113,7 @@ class YugiViewModel(application: Application) : AndroidViewModel(application) {
         }, set)
     }
 
+    //consigue los datos de una carta del api usando retrofit
     fun getCardDataFromRetro(card:String){
         YugiRetrofitRequests().getYugiCardData(object :Callback<YugiCardDataRetroPojo>{
             override fun onResponse(
