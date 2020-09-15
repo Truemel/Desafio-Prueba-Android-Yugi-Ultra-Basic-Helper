@@ -1,0 +1,416 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/counter_zone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginVertical="2dp"
+        app:layout_constraintBottom_toTopOf="@id/spellC_zone">
+
+        <ImageView
+            android:id="@+id/co1"
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            android:src="@drawable/Counter"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <EditText
+            android:id="@+id/counter_total"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@id/co1"
+            app:layout_constraintEnd_toStartOf="@+id/counterR_group"
+            android:maxLength="3"
+            android:inputType="numberDecimal"
+            android:text="@string/ini_counter"/>
+
+        <RadioGroup
+            android:id="@+id/counterR_group"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@id/counter_total">
+
+            <RadioButton
+                android:id="@+id/plus_counter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/plus"
+                android:checked="true"/>
+
+            <RadioButton
+                android:id="@+id/minus_counter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/minus"
+                android:checked="false"/>
+
+            <RadioButton
+                android:id="@+id/reset_counter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/reset"
+                android:checked="false"/>
+
+        </RadioGroup>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/spellC_zone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="2dp"
+        app:layout_constraintTop_toBottomOf="@id/counter_zone"
+        app:layout_constraintBottom_toTopOf="@id/predC_zone">
+
+        <ImageView
+            android:id="@+id/co2"
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            android:src="@drawable/SpellCounter"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <EditText
+            android:id="@+id/spellC_total"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@id/co2"
+            app:layout_constraintEnd_toStartOf="@id/spellCR_group"
+            android:maxLength="3"
+            android:inputType="numberDecimal"
+            android:text="@string/ini_counter"/>
+
+        <RadioGroup
+            android:id="@+id/spellCR_group"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@id/spellC_total">
+
+            <RadioButton
+                android:id="@+id/plus_spellC"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/plus"
+                android:checked="true"/>
+
+            <RadioButton
+                android:id="@+id/minus_spellC"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/minus"
+                android:checked="false"/>
+
+            <RadioButton
+                android:id="@+id/reset_spellC"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/reset"
+                android:checked="false"/>
+
+        </RadioGroup>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/predC_zone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="2dp"
+        app:layout_constraintTop_toBottomOf="@id/spellC_zone"
+        app:layout_constraintBottom_toTopOf="@id/dragC_zone">
+
+        <ImageView
+            android:id="@+id/co3"
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            android:src="@drawable/PredatorCounter"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <EditText
+            android:id="@+id/predC_total"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@id/co3"
+            app:layout_constraintEnd_toStartOf="@id/predCR_group"
+            android:maxLength="3"
+            android:inputType="numberDecimal"
+            android:text="@string/ini_counter"/>
+
+        <RadioGroup
+            android:id="@+id/predCR_group"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@id/predC_total">
+
+            <RadioButton
+                android:id="@+id/plus_predC"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/plus"
+                android:checked="true"/>
+
+            <RadioButton
+                android:id="@+id/minus_predC"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/minus"
+                android:checked="false"/>
+
+            <RadioButton
+                android:id="@+id/reset_predC"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/reset"
+                android:checked="false"/>
+
+        </RadioGroup>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/dragC_zone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="2dp"
+        app:layout_constraintTop_toBottomOf="@id/predC_zone"
+        app:layout_constraintBottom_toTopOf="@id/atk_zone">
+
+        <ImageView
+            android:id="@+id/co4"
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            android:src="@drawable/DragonicCounter"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <EditText
+            android:id="@+id/dragC_total"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@id/co4"
+            app:layout_constraintEnd_toStartOf="@id/dragCR_group"
+            android:maxLength="3"
+            android:inputType="numberDecimal"
+            android:text="@string/ini_counter"/>
+
+        <RadioGroup
+            android:id="@+id/dragCR_group"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@id/dragC_total">
+
+            <RadioButton
+                android:id="@+id/plus_dragC"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/plus"
+                android:checked="true"/>
+
+            <RadioButton
+                android:id="@+id/minus_dragC"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/minus"
+                android:checked="false"/>
+
+            <RadioButton
+                android:id="@+id/reset_dragC"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/reset"
+                android:checked="false"/>
+
+        </RadioGroup>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/atk_zone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="2dp"
+        app:layout_constraintTop_toBottomOf="@id/dragC_zone"
+        app:layout_constraintBottom_toTopOf="@id/def_zone">
+
+        <TextView
+            android:text="@string/atk"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginHorizontal="2dp"/>
+
+        <EditText
+            android:id="@+id/atk_mod"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/atkR_group"
+            android:layout_marginHorizontal="2dp"
+            android:textAlignment="textEnd"
+            android:inputType="numberDecimal"
+            android:text="@string/ini_atk_def"/>
+
+        <RadioGroup
+            android:id="@+id/atkR_group"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@id/atk_mod">
+
+            <RadioButton
+                android:id="@+id/plus_atk"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/plus"
+                android:checked="true"/>
+
+            <RadioButton
+                android:id="@+id/minus_atk"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/minus"
+                android:checked="false"/>
+
+            <RadioButton
+                android:id="@+id/reset_atk"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/reset"
+                android:checked="false"/>
+
+        </RadioGroup>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/def_zone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="2dp"
+        app:layout_constraintTop_toBottomOf="@id/atk_zone"
+        app:layout_constraintBottom_toTopOf="@id/button_zone">
+
+        <TextView
+            android:text="@string/def"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginHorizontal="2dp"/>
+
+        <TextView
+            android:id="@+id/def_mod"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/defR_group"
+            android:layout_marginHorizontal="2dp"
+            android:textAlignment="textEnd"
+            android:text="@string/ini_atk_def"/>
+
+        <RadioGroup
+            android:id="@+id/defR_group"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@id/def_mod">
+
+            <RadioButton
+                android:id="@+id/plus_def"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/plus"
+                android:checked="true"/>
+
+            <RadioButton
+                android:id="@+id/minus_def"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/minus"
+                android:checked="false"/>
+
+            <RadioButton
+                android:id="@+id/reset_def"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/reset"
+                android:checked="false"/>
+
+        </RadioGroup>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/button_zone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/def_zone"
+        app:layout_constraintBottom_toTopOf="parent"
+        android:layout_marginVertical="5dp">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/submit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/submit"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/reset"
+            android:layout_marginHorizontal="5dp"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/reset"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/reset"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@id/submit"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginHorizontal="5dp"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

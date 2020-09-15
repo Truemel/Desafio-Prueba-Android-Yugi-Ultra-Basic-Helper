@@ -12,4 +12,15 @@
     <string name="f_list">Favourite List</string>
     <string name="y_helper">Ultra Basic Helper</string>
     <string name="note_message">This App is getting the card info from http://yugiohprices.com</string>
+    <string name="mast3">Master Rule 3</string>
+    <string name="mast5">Master Rule 5</string>
+    <string name="reset_all">Reset All</string>
+    <string name="atk">ATK</string>
+    <string name="def">DEF</string>
+    <string name="ini_atk_def">+0</string>
+    <string name="ini_counter">0</string>
+    <string name="plus">+</string>
+    <string name="minus">-</string>
+    <string name="reset">RESET</string>
+    <string name="submit">SUBMIT</string>
 </resources>
