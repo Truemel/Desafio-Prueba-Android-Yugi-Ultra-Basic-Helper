@@ -7,7 +7,6 @@ import android.view.ViewGroup
 import android.widget.FrameLayout
 import androidx.fragment.app.Fragment
 import com.example.yu_gi_ohultrabasichelper.R
-import com.example.yu_gi_ohultrabasichelper.viewoh.MainActivity
 import com.google.android.material.button.MaterialButton
 
 class YugiHelperFragment: Fragment(), View.OnClickListener {
@@ -32,12 +31,14 @@ class YugiHelperFragment: Fragment(), View.OnClickListener {
         exMon2 = view.findViewById(R.id.ex2)
         pen1 = view.findViewById(R.id.pend1)
         pen2 = view.findViewById(R.id.pend2)
-        pen1.visibility = View.GONE
-        pen2.visibility = View.GONE
+
         ruleButton = view.findViewById(R.id.change_format)
         resetButton = view.findViewById(R.id.reset_button)
         ruleButton.setOnClickListener(this)
         resetButton.setOnClickListener(this)
+
+        pen1.visibility = View.GONE
+        pen2.visibility = View.GONE
 
         ini()
 
@@ -94,7 +95,7 @@ class YugiHelperFragment: Fragment(), View.OnClickListener {
 
     //Funcion para colocar un fragmento en un viewgroupID
     fun setFragment(fragment: Fragment, res:Int){
-        (context as MainActivity).supportFragmentManager.beginTransaction().replace(res, fragment).commit()
+        (context as YugiHelperLandscapeActivity).supportFragmentManager.beginTransaction().replace(res, fragment).commit()
     }
 
     override fun onClick(v: View?) {

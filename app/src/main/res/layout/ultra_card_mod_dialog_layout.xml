@@ -16,14 +16,14 @@
             android:id="@+id/co1"
             android:layout_width="10dp"
             android:layout_height="10dp"
-            android:src="@drawable/Counter"
+            android:src="@drawable/generic_counter"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
 
         <EditText
             android:id="@+id/counter_total"
-            android:layout_width="wrap_content"
+            android:layout_width="200dp"
             android:layout_height="wrap_content"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -40,7 +40,8 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toEndOf="@id/counter_total">
+            app:layout_constraintStart_toEndOf="@id/counter_total"
+            android:orientation="horizontal">
 
             <RadioButton
                 android:id="@+id/plus_counter"
@@ -79,14 +80,14 @@
             android:id="@+id/co2"
             android:layout_width="10dp"
             android:layout_height="10dp"
-            android:src="@drawable/SpellCounter"
+            android:src="@drawable/spell_counter"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
 
         <EditText
             android:id="@+id/spellC_total"
-            android:layout_width="wrap_content"
+            android:layout_width="200dp"
             android:layout_height="wrap_content"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -103,7 +104,8 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toEndOf="@id/spellC_total">
+            app:layout_constraintStart_toEndOf="@id/spellC_total"
+            android:orientation="horizontal">
 
             <RadioButton
                 android:id="@+id/plus_spellC"
@@ -142,14 +144,14 @@
             android:id="@+id/co3"
             android:layout_width="10dp"
             android:layout_height="10dp"
-            android:src="@drawable/PredatorCounter"
+            android:src="@drawable/predator_counter"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
 
         <EditText
             android:id="@+id/predC_total"
-            android:layout_width="wrap_content"
+            android:layout_width="200dp"
             android:layout_height="wrap_content"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -166,7 +168,8 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toEndOf="@id/predC_total">
+            app:layout_constraintStart_toEndOf="@id/predC_total"
+            android:orientation="horizontal">
 
             <RadioButton
                 android:id="@+id/plus_predC"
@@ -205,14 +208,14 @@
             android:id="@+id/co4"
             android:layout_width="10dp"
             android:layout_height="10dp"
-            android:src="@drawable/DragonicCounter"
+            android:src="@drawable/dragonic_counter"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
 
         <EditText
             android:id="@+id/dragC_total"
-            android:layout_width="wrap_content"
+            android:layout_width="200dp"
             android:layout_height="wrap_content"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -229,7 +232,8 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toEndOf="@id/dragC_total">
+            app:layout_constraintStart_toEndOf="@id/dragC_total"
+            android:orientation="horizontal">
 
             <RadioButton
                 android:id="@+id/plus_dragC"
@@ -275,7 +279,7 @@
 
         <EditText
             android:id="@+id/atk_mod"
-            android:layout_width="wrap_content"
+            android:layout_width="200dp"
             android:layout_height="wrap_content"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -292,7 +296,8 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toEndOf="@id/atk_mod">
+            app:layout_constraintStart_toEndOf="@id/atk_mod"
+            android:orientation="horizontal">
 
             <RadioButton
                 android:id="@+id/plus_atk"
@@ -336,15 +341,16 @@
             app:layout_constraintBottom_toBottomOf="parent"
             android:layout_marginHorizontal="2dp"/>
 
-        <TextView
+        <EditText
             android:id="@+id/def_mod"
-            android:layout_width="wrap_content"
+            android:layout_width="200dp"
             android:layout_height="wrap_content"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@id/defR_group"
             android:layout_marginHorizontal="2dp"
             android:textAlignment="textEnd"
+            android:inputType="numberDecimal"
             android:text="@string/ini_atk_def"/>
 
         <RadioGroup
@@ -354,7 +360,8 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toEndOf="@id/def_mod">
+            app:layout_constraintStart_toEndOf="@id/def_mod"
+            android:orientation="horizontal">
 
             <RadioButton
                 android:id="@+id/plus_def"

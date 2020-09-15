@@ -1,11 +1,14 @@
 package com.example.yu_gi_ohultrabasichelper.viewoh
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.yu_gi_ohultrabasichelper.R
+import com.example.yu_gi_ohultrabasichelper.viewoh.yugi_helper.YugiHelperFragment
+import com.example.yu_gi_ohultrabasichelper.viewoh.yugi_helper.YugiHelperLandscapeActivity
 import com.google.android.material.button.MaterialButton
 
 class StartFragment:Fragment(), View.OnClickListener {
@@ -33,13 +36,18 @@ class StartFragment:Fragment(), View.OnClickListener {
     override fun onClick(v: View?) {
         lateinit var frag:Fragment
 
-        if(v!!.id == cList.id)
-            frag = YugiSetsFragment()
-        else if(v.id == fList.id)
-            frag = YugiFavListFragment()
-        else
-            frag = YugiSetsFragment()
+        if(v!!.id == yHelper.id){
+            var inten:Intent = Intent(context as MainActivity, YugiHelperLandscapeActivity::class.java)
+            startActivity(inten)
+        }else{
+            if(v!!.id == cList.id)
+                frag = YugiSetsFragment()
+            else if(v.id == fList.id)
+                frag = YugiFavListFragment()
+            else
+                frag = YugiHelperFragment()
 
-        (context as MainActivity).changeFragment(frag, null)
+            (context as MainActivity).changeFragment(frag, null)
+        }
     }
 }

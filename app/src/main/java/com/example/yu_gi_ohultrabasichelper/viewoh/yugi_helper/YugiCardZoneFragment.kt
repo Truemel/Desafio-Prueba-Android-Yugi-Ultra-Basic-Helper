@@ -7,7 +7,6 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import com.example.yu_gi_ohultrabasichelper.R
-import com.example.yu_gi_ohultrabasichelper.viewoh.MainActivity
 
 class YugiCardZoneFragment(var isMonster:Boolean):Fragment(), YugiHelperFragment.OnResetAllListener,
     View.OnClickListener, YugiCardZoneModDialog.OnDialogButtonClickListener {
@@ -41,11 +40,11 @@ class YugiCardZoneFragment(var isMonster:Boolean):Fragment(), YugiHelperFragment
         var view:View = inflater.inflate(R.layout.ultra_card_mods_layout, container, false)
         counterZ = view.findViewById(R.id.counter_zone)
         counterZ.visibility = View.INVISIBLE
-        spellCZ = view.findViewById(R.id.counter_zone)
+        spellCZ = view.findViewById(R.id.spellC_zone)
         spellCZ.visibility = View.INVISIBLE
-        predCZ = view.findViewById(R.id.counter_zone)
+        predCZ = view.findViewById(R.id.predC_zone)
         predCZ.visibility = View.INVISIBLE
-        dragCZ = view.findViewById(R.id.counter_zone)
+        dragCZ = view.findViewById(R.id.dragC_zone)
         dragCZ.visibility = View.INVISIBLE
         atkZ = view.findViewById(R.id.atk_zone)
         defZ = view.findViewById(R.id.def_zone)
@@ -83,7 +82,7 @@ class YugiCardZoneFragment(var isMonster:Boolean):Fragment(), YugiHelperFragment
 
     override fun onClick(v: View?) {
         var dialog:YugiCardZoneModDialog = YugiCardZoneModDialog(this)
-        dialog.showNow((context as MainActivity).supportFragmentManager, null)
+        dialog.showNow((context as YugiHelperLandscapeActivity).supportFragmentManager, null)
     }
 
     override fun onSubmit(
@@ -99,27 +98,36 @@ class YugiCardZoneFragment(var isMonster:Boolean):Fragment(), YugiHelperFragment
         predC += predCV
         dragC += dragCV
 
+        if(counter < 0)
+            counter = 0
+        if(spellC < 0)
+            spellC = 0
+        if(predC < 0)
+            predC = 0
+        if(dragC < 0)
+            dragC = 0
+
         counterT.text = counter.toString()
         spellCT.text = spellC.toString()
         predCT.text = predC.toString()
         dragCT.text = dragC.toString()
 
-        if(counter >= 0)
+        if(counter > 0)
             counterZ.visibility = View.VISIBLE
         else
             counterZ.visibility = View.INVISIBLE
 
-        if(spellC >= 0)
+        if(spellC > 0)
             spellCZ.visibility = View.VISIBLE
         else
             spellCZ.visibility = View.INVISIBLE
 
-        if(predC >= 0)
+        if(predC > 0)
             predCZ.visibility = View.VISIBLE
         else
             predCZ.visibility = View.INVISIBLE
 
-        if(dragC >= 0)
+        if(dragC > 0)
             dragCZ.visibility = View.VISIBLE
         else
             dragCZ.visibility = View.INVISIBLE
