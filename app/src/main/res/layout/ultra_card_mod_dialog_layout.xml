@@ -32,6 +32,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@id/co1"
             app:layout_constraintEnd_toStartOf="@+id/counterR_group"
+            android:textSize="12sp"
             android:maxLength="3"
             android:textAlignment="textEnd"
             android:inputType="numberDecimal"
@@ -52,6 +53,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/plus"
+                android:textSize="12sp"
                 android:checked="true"/>
 
             <RadioButton
@@ -59,6 +61,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/minus"
+                android:textSize="12sp"
                 android:checked="false"/>
 
             <RadioButton
@@ -66,6 +69,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/reset"
+                android:textSize="12sp"
                 android:checked="false"/>
 
         </RadioGroup>
@@ -100,6 +104,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@id/co2"
             app:layout_constraintEnd_toStartOf="@id/spellCR_group"
+            android:textSize="12sp"
             android:maxLength="3"
             android:textAlignment="textEnd"
             android:inputType="numberDecimal"
@@ -120,6 +125,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/plus"
+                android:textSize="12sp"
                 android:checked="true"/>
 
             <RadioButton
@@ -127,6 +133,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/minus"
+                android:textSize="12sp"
                 android:checked="false"/>
 
             <RadioButton
@@ -134,6 +141,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/reset"
+                android:textSize="12sp"
                 android:checked="false"/>
 
         </RadioGroup>
@@ -168,6 +176,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@id/co3"
             app:layout_constraintEnd_toStartOf="@id/predCR_group"
+            android:textSize="12sp"
             android:maxLength="3"
             android:textAlignment="textEnd"
             android:inputType="numberDecimal"
@@ -188,6 +197,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/plus"
+                android:textSize="12sp"
                 android:checked="true"/>
 
             <RadioButton
@@ -195,6 +205,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/minus"
+                android:textSize="12sp"
                 android:checked="false"/>
 
             <RadioButton
@@ -202,6 +213,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/reset"
+                android:textSize="12sp"
                 android:checked="false"/>
 
         </RadioGroup>
@@ -236,6 +248,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@id/co4"
             app:layout_constraintEnd_toStartOf="@id/dragCR_group"
+            android:textSize="12sp"
             android:maxLength="3"
             android:textAlignment="textEnd"
             android:inputType="numberDecimal"
@@ -256,6 +269,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/plus"
+                android:textSize="12sp"
                 android:checked="true"/>
 
             <RadioButton
@@ -263,6 +277,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/minus"
+                android:textSize="12sp"
                 android:checked="false"/>
 
             <RadioButton
@@ -270,6 +285,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/reset"
+                android:textSize="12sp"
                 android:checked="false"/>
 
         </RadioGroup>
@@ -290,6 +306,7 @@
             android:text="@string/atk"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textSize="12sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -304,6 +321,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@id/atkR_group"
             app:layout_constraintStart_toEndOf="@id/atk_text"
+            android:textSize="12sp"
             android:textAlignment="textEnd"
             android:inputType="numberDecimal"
             android:text="@string/ini_counter"/>
@@ -323,6 +341,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/plus"
+                android:textSize="12sp"
                 android:checked="true"/>
 
             <RadioButton
@@ -330,6 +349,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/minus"
+                android:textSize="12sp"
                 android:checked="false"/>
 
             <RadioButton
@@ -337,6 +357,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/reset"
+                android:textSize="12sp"
                 android:checked="false"/>
 
         </RadioGroup>
@@ -357,6 +378,7 @@
             android:text="@string/def"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textSize="12sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -371,6 +393,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@id/defR_group"
             app:layout_constraintStart_toEndOf="@id/def_text"
+            android:textSize="12sp"
             android:textAlignment="textEnd"
             android:inputType="numberDecimal"
             android:text="@string/ini_counter"/>
@@ -390,6 +413,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/plus"
+                android:textSize="12sp"
                 android:checked="true"/>
 
             <RadioButton
@@ -397,6 +421,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/minus"
+                android:textSize="12sp"
                 android:checked="false"/>
 
             <RadioButton
@@ -404,6 +429,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/reset"
+                android:textSize="12sp"
                 android:checked="false"/>
 
         </RadioGroup>

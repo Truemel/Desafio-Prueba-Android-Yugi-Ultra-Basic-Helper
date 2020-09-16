@@ -17,6 +17,6 @@ class YugiHelperLandscapeActivity:AppCompatActivity() {
 
     //Reemplaza por el fragmento que recibe y le entrega un tag
     fun changeFragment(fragment: Fragment){
-        supportFragmentManager.beginTransaction().addToBackStack(null).replace(R.id.frame, fragment).commit()
+        supportFragmentManager.beginTransaction().replace(R.id.frame, fragment).commit()
     }
 }
