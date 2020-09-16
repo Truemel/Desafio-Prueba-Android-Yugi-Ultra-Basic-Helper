@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.Fragment
 import com.example.yu_gi_ohultrabasichelper.R
 
@@ -82,6 +83,7 @@ class YugiCardZoneFragment(var isMonster:Boolean):Fragment(), YugiHelperFragment
 
     override fun onClick(v: View?) {
         var dialog:YugiCardZoneModDialog = YugiCardZoneModDialog(this)
+        dialog.setStyle(DialogFragment.STYLE_NO_TITLE, R.style.HelperTheme)
         dialog.showNow((context as YugiHelperLandscapeActivity).supportFragmentManager, null)
     }
 

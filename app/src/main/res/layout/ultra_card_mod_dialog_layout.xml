@@ -22,7 +22,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toStartOf="@id/counter_total"
-            app:layout_constraintHorizontal_chainStyle="spread_inside"/>
+            app:layout_constraintHorizontal_chainStyle="spread"/>
 
         <EditText
             android:id="@+id/counter_total"
@@ -80,7 +80,7 @@
         android:id="@+id/spellC_zone"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginVertical="2dp"
+        android:layout_marginTop="1dp"
         android:layout_marginHorizontal="5dp"
         app:layout_constraintTop_toBottomOf="@id/counter_zone"
         app:layout_constraintBottom_toTopOf="@id/predC_zone">
@@ -94,7 +94,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toStartOf="@id/spellC_total"
-            app:layout_constraintHorizontal_chainStyle="spread_inside"/>
+            app:layout_constraintHorizontal_chainStyle="spread"/>
 
         <EditText
             android:id="@+id/spellC_total"
@@ -152,7 +152,7 @@
         android:id="@+id/predC_zone"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginVertical="2dp"
+        android:layout_marginTop="1dp"
         android:layout_marginHorizontal="5dp"
         app:layout_constraintTop_toBottomOf="@id/spellC_zone"
         app:layout_constraintBottom_toTopOf="@id/dragC_zone">
@@ -166,7 +166,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toStartOf="@id/predC_total"
-            app:layout_constraintHorizontal_chainStyle="spread_inside"/>
+            app:layout_constraintHorizontal_chainStyle="spread"/>
 
         <EditText
             android:id="@+id/predC_total"
@@ -224,7 +224,7 @@
         android:id="@+id/dragC_zone"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginVertical="2dp"
+        android:layout_marginTop="1dp"
         android:layout_marginHorizontal="5dp"
         app:layout_constraintTop_toBottomOf="@id/predC_zone"
         app:layout_constraintBottom_toTopOf="@id/atk_zone">
@@ -238,7 +238,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toStartOf="@id/dragC_total"
-            app:layout_constraintHorizontal_chainStyle="spread_inside"/>
+            app:layout_constraintHorizontal_chainStyle="spread"/>
 
         <EditText
             android:id="@+id/dragC_total"
@@ -296,7 +296,7 @@
         android:id="@+id/atk_zone"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginVertical="2dp"
+        android:layout_marginTop="1dp"
         android:layout_marginHorizontal="5dp"
         app:layout_constraintTop_toBottomOf="@id/dragC_zone"
         app:layout_constraintBottom_toTopOf="@id/def_zone">
@@ -311,7 +311,7 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@id/atk_mod"
-            app:layout_constraintHorizontal_chainStyle="spread_inside"/>
+            app:layout_constraintHorizontal_chainStyle="spread"/>
 
         <EditText
             android:id="@+id/atk_mod"
@@ -368,7 +368,7 @@
         android:id="@+id/def_zone"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginVertical="2dp"
+        android:layout_marginTop="1dp"
         android:layout_marginHorizontal="5dp"
         app:layout_constraintTop_toBottomOf="@id/atk_zone"
         app:layout_constraintBottom_toTopOf="@id/button_zone">
@@ -383,7 +383,7 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@id/def_mod"
-            app:layout_constraintHorizontal_chainStyle="spread_inside"/>
+            app:layout_constraintHorizontal_chainStyle="spread"/>
 
         <EditText
             android:id="@+id/def_mod"
