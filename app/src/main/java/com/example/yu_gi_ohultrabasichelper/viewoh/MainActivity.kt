@@ -9,11 +9,16 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        changeFragment(StartFragment(), null)
+        changeFragmentNoBackStack(StartFragment())
     }
 
     //Reemplaza por el fragmento que recibe y le entrega un tag
     fun changeFragment(fragment: Fragment, tag:String?){
         supportFragmentManager.beginTransaction().addToBackStack(null).replace(R.id.frame, fragment, tag).commit()
+    }
+
+    //Reemplaza por el fragmento que recibe sin agregarlo a un backstack
+    fun changeFragmentNoBackStack(fragment: Fragment){
+        supportFragmentManager.beginTransaction().replace(R.id.frame, fragment).commit()
     }
 }
