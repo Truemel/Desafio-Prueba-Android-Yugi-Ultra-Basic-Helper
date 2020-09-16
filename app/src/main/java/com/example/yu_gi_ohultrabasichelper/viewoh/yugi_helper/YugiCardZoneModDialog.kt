@@ -10,7 +10,10 @@ import androidx.fragment.app.DialogFragment
 import com.example.yu_gi_ohultrabasichelper.R
 import com.google.android.material.button.MaterialButton
 
-class YugiCardZoneModDialog(var onButtonClick:OnDialogButtonClickListener):DialogFragment(), View.OnClickListener {
+class YugiCardZoneModDialog(var onButtonClick:OnDialogButtonClickListener, var isMonster:Boolean):DialogFragment(), View.OnClickListener {
+
+    private lateinit var atkZ:ViewGroup
+    private lateinit var defZ:ViewGroup
 
     private lateinit var counter:EditText
     private lateinit var spellC:EditText
@@ -45,6 +48,13 @@ class YugiCardZoneModDialog(var onButtonClick:OnDialogButtonClickListener):Dialo
         savedInstanceState: Bundle?
     ): View? {
         var view:View = inflater.inflate(R.layout.ultra_card_mod_dialog_layout, container, false)
+        atkZ = view.findViewById(R.id.atk_zone)
+        defZ = view.findViewById(R.id.def_zone)
+        if(!isMonster){
+            atkZ.visibility = View.GONE
+            defZ.visibility = View.GONE
+        }
+
         counter = view.findViewById(R.id.counter_total)
         spellC = view.findViewById(R.id.spellC_total)
         predC = view.findViewById(R.id.predC_total)

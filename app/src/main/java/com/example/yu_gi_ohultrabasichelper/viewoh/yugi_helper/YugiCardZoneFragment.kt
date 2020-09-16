@@ -82,7 +82,7 @@ class YugiCardZoneFragment(var isMonster:Boolean):Fragment(), YugiHelperFragment
     }
 
     override fun onClick(v: View?) {
-        var dialog:YugiCardZoneModDialog = YugiCardZoneModDialog(this)
+        var dialog:YugiCardZoneModDialog = YugiCardZoneModDialog(this, isMonster)
         dialog.setStyle(DialogFragment.STYLE_NO_TITLE, R.style.HelperTheme)
         dialog.showNow((context as YugiHelperLandscapeActivity).supportFragmentManager, null)
     }
@@ -150,8 +150,8 @@ class YugiCardZoneFragment(var isMonster:Boolean):Fragment(), YugiHelperFragment
             else
                 defS = "-"
 
-            atkT.text = atkS
-            defT.text = defS
+            atkT.text = atkS+atk
+            defT.text = defS+def
         }
     }
 
