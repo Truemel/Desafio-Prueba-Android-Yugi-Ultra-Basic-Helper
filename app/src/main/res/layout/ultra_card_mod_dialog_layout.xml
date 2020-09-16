@@ -9,7 +9,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginVertical="2dp"
+        android:layout_marginTop="1dp"
+        android:layout_marginHorizontal="5dp"
         app:layout_constraintBottom_toTopOf="@id/spellC_zone">
 
         <ImageView
@@ -19,7 +20,9 @@
             android:src="@drawable/generic_counter"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/counter_total"
+            app:layout_constraintHorizontal_chainStyle="spread_inside"/>
 
         <EditText
             android:id="@+id/counter_total"
@@ -30,6 +33,7 @@
             app:layout_constraintStart_toEndOf="@id/co1"
             app:layout_constraintEnd_toStartOf="@+id/counterR_group"
             android:maxLength="3"
+            android:textAlignment="textEnd"
             android:inputType="numberDecimal"
             android:text="@string/ini_counter"/>
 
@@ -73,6 +77,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginVertical="2dp"
+        android:layout_marginHorizontal="5dp"
         app:layout_constraintTop_toBottomOf="@id/counter_zone"
         app:layout_constraintBottom_toTopOf="@id/predC_zone">
 
@@ -83,7 +88,9 @@
             android:src="@drawable/spell_counter"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/spellC_total"
+            app:layout_constraintHorizontal_chainStyle="spread_inside"/>
 
         <EditText
             android:id="@+id/spellC_total"
@@ -94,6 +101,7 @@
             app:layout_constraintStart_toEndOf="@id/co2"
             app:layout_constraintEnd_toStartOf="@id/spellCR_group"
             android:maxLength="3"
+            android:textAlignment="textEnd"
             android:inputType="numberDecimal"
             android:text="@string/ini_counter"/>
 
@@ -137,6 +145,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginVertical="2dp"
+        android:layout_marginHorizontal="5dp"
         app:layout_constraintTop_toBottomOf="@id/spellC_zone"
         app:layout_constraintBottom_toTopOf="@id/dragC_zone">
 
@@ -147,7 +156,9 @@
             android:src="@drawable/predator_counter"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/predC_total"
+            app:layout_constraintHorizontal_chainStyle="spread_inside"/>
 
         <EditText
             android:id="@+id/predC_total"
@@ -158,6 +169,7 @@
             app:layout_constraintStart_toEndOf="@id/co3"
             app:layout_constraintEnd_toStartOf="@id/predCR_group"
             android:maxLength="3"
+            android:textAlignment="textEnd"
             android:inputType="numberDecimal"
             android:text="@string/ini_counter"/>
 
@@ -201,6 +213,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginVertical="2dp"
+        android:layout_marginHorizontal="5dp"
         app:layout_constraintTop_toBottomOf="@id/predC_zone"
         app:layout_constraintBottom_toTopOf="@id/atk_zone">
 
@@ -211,7 +224,9 @@
             android:src="@drawable/dragonic_counter"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/dragC_total"
+            app:layout_constraintHorizontal_chainStyle="spread_inside"/>
 
         <EditText
             android:id="@+id/dragC_total"
@@ -222,6 +237,7 @@
             app:layout_constraintStart_toEndOf="@id/co4"
             app:layout_constraintEnd_toStartOf="@id/dragCR_group"
             android:maxLength="3"
+            android:textAlignment="textEnd"
             android:inputType="numberDecimal"
             android:text="@string/ini_counter"/>
 
@@ -265,17 +281,20 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginVertical="2dp"
+        android:layout_marginHorizontal="5dp"
         app:layout_constraintTop_toBottomOf="@id/dragC_zone"
         app:layout_constraintBottom_toTopOf="@id/def_zone">
 
         <TextView
+            android:id="@+id/atk_text"
             android:text="@string/atk"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
-            android:layout_marginHorizontal="2dp"/>
+            app:layout_constraintEnd_toStartOf="@id/atk_mod"
+            app:layout_constraintHorizontal_chainStyle="spread_inside"/>
 
         <EditText
             android:id="@+id/atk_mod"
@@ -284,10 +303,10 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@id/atkR_group"
-            android:layout_marginHorizontal="2dp"
+            app:layout_constraintStart_toEndOf="@id/atk_text"
             android:textAlignment="textEnd"
             android:inputType="numberDecimal"
-            android:text="@string/ini_atk_def"/>
+            android:text="@string/ini_counter"/>
 
         <RadioGroup
             android:id="@+id/atkR_group"
@@ -329,17 +348,20 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginVertical="2dp"
+        android:layout_marginHorizontal="5dp"
         app:layout_constraintTop_toBottomOf="@id/atk_zone"
         app:layout_constraintBottom_toTopOf="@id/button_zone">
 
         <TextView
+            android:id="@+id/def_text"
             android:text="@string/def"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
-            android:layout_marginHorizontal="2dp"/>
+            app:layout_constraintEnd_toStartOf="@id/def_mod"
+            app:layout_constraintHorizontal_chainStyle="spread_inside"/>
 
         <EditText
             android:id="@+id/def_mod"
@@ -348,10 +370,10 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@id/defR_group"
-            android:layout_marginHorizontal="2dp"
+            app:layout_constraintStart_toEndOf="@id/def_text"
             android:textAlignment="textEnd"
             android:inputType="numberDecimal"
-            android:text="@string/ini_atk_def"/>
+            android:text="@string/ini_counter"/>
 
         <RadioGroup
             android:id="@+id/defR_group"
@@ -393,8 +415,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@id/def_zone"
-        app:layout_constraintBottom_toTopOf="parent"
-        android:layout_marginVertical="5dp">
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginVertical="1dp">
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/submit"
