@@ -5,8 +5,11 @@ import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.example.yu_gi_ohultrabasichelper.R
+import com.google.firebase.analytics.FirebaseAnalytics
 
 class YugiHelperLandscapeActivity:AppCompatActivity() {
+
+    private lateinit var mFireBaseAnalytics: FirebaseAnalytics
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -14,6 +17,7 @@ class YugiHelperLandscapeActivity:AppCompatActivity() {
         if(supportActionBar != null)
             supportActionBar!!.hide()
         setContentView(R.layout.activity_main)
+        mFireBaseAnalytics = FirebaseAnalytics.getInstance(this)
         changeFragment(YugiHelperFragment())
     }
 
