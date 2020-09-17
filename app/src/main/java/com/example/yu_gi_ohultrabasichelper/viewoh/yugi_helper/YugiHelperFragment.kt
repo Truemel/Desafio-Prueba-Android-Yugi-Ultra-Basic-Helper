@@ -106,11 +106,13 @@ class YugiHelperFragment: Fragment(), View.OnClickListener {
                 pen2.visibility = View.VISIBLE
                 exMon1.visibility = View.INVISIBLE
                 exMon2.visibility = View.INVISIBLE
+                ruleButton.text = getString(R.string.mast5)
             }else{
                 pen1.visibility = View.GONE
                 pen2.visibility = View.GONE
                 exMon1.visibility = View.VISIBLE
                 exMon2.visibility = View.VISIBLE
+                ruleButton.text = getString(R.string.mast3)
             }
         }else if(v!!.id == resetButton.id)
             for(aux in listenerList)
