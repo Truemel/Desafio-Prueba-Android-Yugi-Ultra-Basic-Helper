@@ -59,7 +59,7 @@ class YugiFavDataDialogFragment:DialogFragment(), View.OnClickListener {
         save.text = "Save Card Changes"
         save.setOnClickListener(this)
 
-        vModel.yugiFavList.observe(context as MainActivity, Observer {
+        vModel.yugiFavList.observe(viewLifecycleOwner, Observer {
             if(!isDismissed){
                 favCard = it[tagP.toInt()]
                 cardName.text = favCard!!.name
@@ -83,6 +83,7 @@ class YugiFavDataDialogFragment:DialogFragment(), View.OnClickListener {
         vModel.updateFavCard(favCard!!)
         Toast.makeText(context, "Favourite card updated", Toast.LENGTH_LONG).show()
         isDismissed = true
+        vModel.yugiFavList.removeObservers(viewLifecycleOwner)
         dismiss()
     }
 }
