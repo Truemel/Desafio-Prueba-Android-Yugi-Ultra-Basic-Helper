@@ -26,7 +26,7 @@ class YugiHelperFragment: Fragment(), View.OnClickListener {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        var view:View = inflater.inflate(R.layout.ultra_field_layout, container, false)
+        val view:View = inflater.inflate(R.layout.ultra_field_layout, container, false)
         exMon1 = view.findViewById(R.id.ex1)
         exMon2 = view.findViewById(R.id.ex2)
         pen1 = view.findViewById(R.id.pend1)
@@ -45,7 +45,7 @@ class YugiHelperFragment: Fragment(), View.OnClickListener {
         return view
     }
 
-    fun ini(){
+    private fun ini(){
         var cardZone = YugiCardZoneFragment(false)
         listenerList.add(cardZone)
         setFragment(cardZone, R.id.field_c)
@@ -114,7 +114,7 @@ class YugiHelperFragment: Fragment(), View.OnClickListener {
                 exMon2.visibility = View.VISIBLE
                 ruleButton.text = getString(R.string.mast3)
             }
-        }else if(v!!.id == resetButton.id)
+        }else if(v.id == resetButton.id)
             for(aux in listenerList)
                 aux.onResetAll()
     }

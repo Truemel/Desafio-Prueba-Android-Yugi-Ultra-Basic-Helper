@@ -59,7 +59,7 @@ class YugiViewModel(application: Application) : AndroidViewModel(application) {
 
         yugiCardData = dbManager.getCardData(card)
 
-        if(yugiCardData.value != null && yugiCardData.value!!.name.length > 0)
+        if(yugiCardData.value != null && yugiCardData.value!!.name.isNotEmpty())
             haveCard = true
 
         return haveCard

@@ -13,9 +13,9 @@ import com.google.android.material.button.MaterialButton
 
 class StartFragment:Fragment(), View.OnClickListener {
 
-    lateinit var cList:MaterialButton
-    lateinit var fList:MaterialButton
-    lateinit var yHelper:MaterialButton
+    private lateinit var cList:MaterialButton
+    private lateinit var fList:MaterialButton
+    private lateinit var yHelper:MaterialButton
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -37,10 +37,10 @@ class StartFragment:Fragment(), View.OnClickListener {
         lateinit var frag:Fragment
 
         if(v!!.id == yHelper.id){
-            var inten:Intent = Intent(context as MainActivity, YugiHelperLandscapeActivity::class.java)
+            val inten:Intent = Intent(context as MainActivity, YugiHelperLandscapeActivity::class.java)
             startActivity(inten)
         }else{
-            if(v!!.id == cList.id)
+            if(v.id == cList.id)
                 frag = YugiSetsFragment()
             else if(v.id == fList.id)
                 frag = YugiFavListFragment()

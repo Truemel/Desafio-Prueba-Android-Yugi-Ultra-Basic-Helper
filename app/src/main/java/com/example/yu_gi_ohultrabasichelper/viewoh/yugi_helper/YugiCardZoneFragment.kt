@@ -38,7 +38,7 @@ class YugiCardZoneFragment(var isMonster:Boolean):Fragment(), YugiHelperFragment
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        var view:View = inflater.inflate(R.layout.ultra_card_mods_layout, container, false)
+        val view:View = inflater.inflate(R.layout.ultra_card_mods_layout, container, false)
         counterZ = view.findViewById(R.id.counter_zone)
         counterZ.visibility = View.INVISIBLE
         spellCZ = view.findViewById(R.id.spellC_zone)
@@ -82,7 +82,7 @@ class YugiCardZoneFragment(var isMonster:Boolean):Fragment(), YugiHelperFragment
     }
 
     override fun onClick(v: View?) {
-        var dialog:YugiCardZoneModDialog = YugiCardZoneModDialog(this, isMonster)
+        val dialog:YugiCardZoneModDialog = YugiCardZoneModDialog(this, isMonster)
         dialog.setStyle(DialogFragment.STYLE_NO_TITLE, R.style.HelperTheme)
         dialog.showNow((context as YugiHelperLandscapeActivity).supportFragmentManager, null)
     }

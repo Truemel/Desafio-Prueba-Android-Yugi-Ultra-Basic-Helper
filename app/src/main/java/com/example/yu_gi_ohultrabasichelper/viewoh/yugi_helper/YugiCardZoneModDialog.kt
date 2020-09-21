@@ -47,7 +47,7 @@ class YugiCardZoneModDialog(var onButtonClick:OnDialogButtonClickListener, var i
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        var view:View = inflater.inflate(R.layout.ultra_card_mod_dialog_layout, container, false)
+        val view:View = inflater.inflate(R.layout.ultra_card_mod_dialog_layout, container, false)
         atkZ = view.findViewById(R.id.atk_zone)
         defZ = view.findViewById(R.id.def_zone)
         if(!isMonster){
@@ -109,7 +109,7 @@ class YugiCardZoneModDialog(var onButtonClick:OnDialogButtonClickListener, var i
                 de *= -1
             onButtonClick.onSubmit(coun, spell, pred, drag, at, de)
             onButtonClick.onReset(counterRe.isChecked, spellCRe.isChecked, predCRe.isChecked, dragCRe.isChecked, atkRe.isChecked, defRe.isChecked)
-        }else if(v!!.id == reset.id)
+        }else if(v.id == reset.id)
             onButtonClick.onReset(true, true, true, true, true, true)
         dismiss()
     }

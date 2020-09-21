@@ -21,8 +21,8 @@ class YugiFavListFragment:Fragment(), YugiFavListAdapter.OnDeleteListener, View.
     private lateinit var list:RecyclerView
     private lateinit var vModel:YugiViewModel
     private lateinit var adapter:YugiFavListAdapter
-    lateinit var noFav:TextView
-    lateinit var delAll:MaterialButton
+    private lateinit var noFav:TextView
+    private lateinit var delAll:MaterialButton
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
